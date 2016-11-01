@@ -1,16 +1,24 @@
 using Microsoft.AspNetCore.Mvc;
 
-[Route("/")]
-public class HomeController : Controller
-{
-    [HttpGet]
-    public IActionResult Root(){
-        ViewData["Message"] = "Some extra info can be sent to the view";
-        ViewData["Username"] = "Me";
-        return View("Index");
+/// and home -> Home() - an HTML home page
+//about -> About() - an HTML about page
+
+
+
+
+[Route("/home")]
+public class HomeController : Controller{
+    private IBlogRepo blog;
+    public HomeController(IBlogRepo b){
+        blog = b;
     }
 
-    [HttpGet("Home/Index/{username?}")]
+    [HttpGet]
+    public IActionResult ReadAll(){
+        return View(blog);
+    }
+
+    [HttpGet("home/About")]
     public IActionResult Index(string username = "you")
     {
         ViewData["Message"] = "Some extra info can be sent to the view";

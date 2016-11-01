@@ -1,0 +1,21 @@
+@model Post
+
+Edit post:
+
+<hr/>
+
+<form asp-controller="post" asp-action="Upsert">
+    <div>
+        <label asp-for="title"></label>
+        <input asp-for="title"/>
+    </div>
+
+    <div>
+        <label asp-for="content"></label>
+        <input asp-for="content"/>
+    </div>
+
+    <input asp-for="PostId" type="hidden"/>
+    
+    <button type="submit">Update</button>
+</form>

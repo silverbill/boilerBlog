@@ -12,11 +12,14 @@ public class Post
     // sometimes, people use Guids
     public int PostId { get; set; }
     // [required] - we can require some attributes - throw errors if the model isn't valid
-    public string Title { get; set; }
-    public string Content { get; set; }
+    public string title { get; set; }
+    public string content { get; set; }
     // [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
-    public DateTime createdAt { get; set; }
+    public DateTime createdAt { get; set; } = DateTime.Now;
     // public Blog Blog { get; set; }
+    public Post(){
+        PostId = new Random().Next();       //postNumber = new Int32().Next();  func for assign next blog as postNumber
+    }
 
     /*
     other attributes

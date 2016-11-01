@@ -25,7 +25,7 @@ public static class Seed
         // Blog mine = new Blog {Url = "mkeas.org"};
         // db.Blogs.Add(mine);
         for(var i = 0; i < 10; i++){
-            db.Posts.Add(new Post { Title = $"Test Post {i}", Content = $"Test Content {i}" }); // Date=DateTime.Parse("2005-09-01")}
+            db.Posts.Add(new Post { title = $"Test Post {i}", content = $"Test content {i}" }); // Date=DateTime.Parse("2005-09-01")}
         }
 
         // Console.WriteLine(db.Database);

@@ -14,3 +14,4 @@ internal static class API {
     
     public static string ToJSON(Object o) => JsonConvert.SerializeObject(o);
 }
+

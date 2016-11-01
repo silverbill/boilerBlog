@@ -1,0 +1,16 @@
+@model Post
+@{
+    var c = Model.content == null ? "" : Model.content;
+    c = c.Substring(0, Math.Min(c.Length, 30));
+}
+<div class="post">
+    <p> Name: <a href="/posts/@(Model.PostId)/edit">@Model.title</a> </p>
+    <p> Content: @c...</p>
+    <p> Delete? 
+        <form 
+            method="post"
+            action="/posts/delete/@(Model.PostId)">
+                <button type="submit">[x]</button>
+        </form>
+    </p>
+</div>
